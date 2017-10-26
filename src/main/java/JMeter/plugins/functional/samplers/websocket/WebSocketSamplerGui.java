@@ -22,7 +22,6 @@ public class WebSocketSamplerGui extends AbstractSamplerGui {
     private static final Logger log = LoggingManager.getLoggerForClass();
 
     public WebSocketSamplerGui() {
-        super();
         init();
         initFields();
 
@@ -55,21 +54,21 @@ public class WebSocketSamplerGui extends AbstractSamplerGui {
             webSocketSamplerPanel.setContextPath(webSocketSamplerTestElement.getContextPath());
             webSocketSamplerPanel.setContentEncoding(webSocketSamplerTestElement.getContentEncoding());
             webSocketSamplerPanel.setConnectPayload(webSocketSamplerTestElement.getConnectPayload());
-            webSocketSamplerPanel.setSubscribePayload(webSocketSamplerTestElement.getSubscribePayload());
-            webSocketSamplerPanel.setResponseTimeout(webSocketSamplerTestElement.getResponseTimeout());
-            webSocketSamplerPanel.setConnectionTimeout(webSocketSamplerTestElement.getConnectionTimeout());
+            webSocketSamplerPanel.setSendPayload(webSocketSamplerTestElement.getResponsePayload());
+            webSocketSamplerPanel.setResponseTimeout(String.valueOf(webSocketSamplerTestElement.getResponseTimeout()));
+            webSocketSamplerPanel.setConnectionTimeout(String.valueOf(webSocketSamplerTestElement.getConnectionTimeout()));
             webSocketSamplerPanel.setIgnoreSslErrors(webSocketSamplerTestElement.isIgnoreSslErrors());
             webSocketSamplerPanel.setStreamingConnection(webSocketSamplerTestElement.isStreamingConnection());
             webSocketSamplerPanel.setStompProtocol(webSocketSamplerTestElement.isStompProtocol());
             webSocketSamplerPanel.setConnectionId(webSocketSamplerTestElement.getConnectionId());
             webSocketSamplerPanel.setConnectPattern(webSocketSamplerTestElement.getConnectPattern());
-            webSocketSamplerPanel.setSubscribePattern(webSocketSamplerTestElement.getSubscribePattern());
+            webSocketSamplerPanel.setResponsePattern(webSocketSamplerTestElement.getResponsePattern());
             webSocketSamplerPanel.setCloseConncectionPattern(webSocketSamplerTestElement.getCloseConncectionPattern());
             webSocketSamplerPanel.setProxyAddress(webSocketSamplerTestElement.getProxyAddress());
             webSocketSamplerPanel.setProxyPassword(webSocketSamplerTestElement.getProxyPassword());
             webSocketSamplerPanel.setProxyPort(webSocketSamplerTestElement.getProxyPort());
             webSocketSamplerPanel.setProxyUsername(webSocketSamplerTestElement.getProxyUsername());
-            webSocketSamplerPanel.setMessageBacklog(webSocketSamplerTestElement.getMessageBacklog());
+            webSocketSamplerPanel.setMessageBacklog(String.valueOf(webSocketSamplerTestElement.getMessageBacklog()));
 
             Arguments queryStringParameters = webSocketSamplerTestElement.getQueryStringParameters();
             if (queryStringParameters != null) {
@@ -97,7 +96,7 @@ public class WebSocketSamplerGui extends AbstractSamplerGui {
             webSocketSamplerTestElement.setContextPath(webSocketSamplerPanel.getContextPath());
             webSocketSamplerTestElement.setContentEncoding(webSocketSamplerPanel.getContentEncoding());
             webSocketSamplerTestElement.setConnectPayload(webSocketSamplerPanel.getConnectPayload());
-            webSocketSamplerTestElement.setSubscribePayload(webSocketSamplerPanel.getSubscribePayload());
+            webSocketSamplerTestElement.setSendPayload(webSocketSamplerPanel.getSendPayload());
             webSocketSamplerTestElement.setConnectionTimeout(webSocketSamplerPanel.getConnectionTimeout());
             webSocketSamplerTestElement.setResponseTimeout(webSocketSamplerPanel.getResponseTimeout());
             webSocketSamplerTestElement.setIgnoreSslErrors(webSocketSamplerPanel.isIgnoreSslErrors());
@@ -105,7 +104,7 @@ public class WebSocketSamplerGui extends AbstractSamplerGui {
 			webSocketSamplerTestElement.setStompProtocol(webSocketSamplerPanel.isStompProtocol());
             webSocketSamplerTestElement.setConnectionId(webSocketSamplerPanel.getConnectionId());
             webSocketSamplerTestElement.setConnectPattern(webSocketSamplerPanel.getConnectPattern());
-            webSocketSamplerTestElement.setSubscribePattern(webSocketSamplerPanel.getSubscribePattern());
+            webSocketSamplerTestElement.setResponsePattern(webSocketSamplerPanel.getResponsePattern());
             webSocketSamplerTestElement.setCloseConncectionPattern(webSocketSamplerPanel.getCloseConncectionPattern());
             webSocketSamplerTestElement.setProxyAddress(webSocketSamplerPanel.getProxyAddress());
             webSocketSamplerTestElement.setProxyPassword(webSocketSamplerPanel.getProxyPassword());

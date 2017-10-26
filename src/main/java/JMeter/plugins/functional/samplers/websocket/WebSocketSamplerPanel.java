@@ -59,7 +59,7 @@ public class WebSocketSamplerPanel extends javax.swing.JPanel {
 		jScrollPane1 = new javax.swing.JScrollPane();
 		jScrollPane2 = new javax.swing.JScrollPane();
 		connectPayloadEditorPane = new javax.swing.JEditorPane();
-		subscribePayloadEditorPane = new javax.swing.JEditorPane();
+		sendPayloadEditorPane = new javax.swing.JEditorPane();
 		jLabel14 = new javax.swing.JLabel();
 		jLabel18 = new javax.swing.JLabel();
 		jLabel19 = new javax.swing.JLabel();
@@ -70,7 +70,7 @@ public class WebSocketSamplerPanel extends javax.swing.JPanel {
 		jPanel5 = new javax.swing.JPanel();
 		jLabel7 = new javax.swing.JLabel();
 		connectPatternTextField = new javax.swing.JTextField();
-		subscribePatternTextField = new javax.swing.JTextField();
+		responsePatternTextField = new javax.swing.JTextField();
 		jLabel9 = new javax.swing.JLabel();
 		closeConncectionPatternTextField = new javax.swing.JTextField();
 		jLabel16 = new javax.swing.JLabel();
@@ -168,10 +168,10 @@ public class WebSocketSamplerPanel extends javax.swing.JPanel {
 		ignoreSslErrorsCheckBox.setText("Ignore SSL certificate errors");
 
 		jScrollPane1.setViewportView(connectPayloadEditorPane);
-		jScrollPane2.setViewportView(subscribePayloadEditorPane);
+		jScrollPane2.setViewportView(sendPayloadEditorPane);
 
 		jLabel14.setText("Connect Message");
-		jLabel18.setText("Subscribe Message");
+		jLabel18.setText("Send Message");
 
 		jLabel15.setText("Implementation:");
 
@@ -261,7 +261,7 @@ public class WebSocketSamplerPanel extends javax.swing.JPanel {
 
 		jLabel7.setText("Connect pattern:");
 
-		jLabel19.setText("Subscribe pattern:");
+		jLabel19.setText("Response pattern:");
 
 		jLabel9.setText("Close connection pattern:");
 
@@ -285,7 +285,7 @@ public class WebSocketSamplerPanel extends javax.swing.JPanel {
 										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
 												.addComponent(jLabel19)
 												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(subscribePatternTextField))
+												.addComponent(responsePatternTextField))
 										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
 												.addComponent(jLabel9)
 												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -306,7 +306,7 @@ public class WebSocketSamplerPanel extends javax.swing.JPanel {
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 								.addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
 										.addComponent(jLabel19)
-										.addComponent(subscribePatternTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addComponent(responsePatternTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
 								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 								.addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
 										.addComponent(jLabel9)
@@ -449,9 +449,9 @@ public class WebSocketSamplerPanel extends javax.swing.JPanel {
 	private javax.swing.JTextField proxyUsernameTextField;
 	private javax.swing.JPanel querystringAttributesPanel;
 	private javax.swing.JEditorPane connectPayloadEditorPane;
-	private javax.swing.JEditorPane subscribePayloadEditorPane;
+	private javax.swing.JEditorPane sendPayloadEditorPane;
 	private javax.swing.JTextField connectPatternTextField;
-	private javax.swing.JTextField subscribePatternTextField;
+	private javax.swing.JTextField responsePatternTextField;
 	private javax.swing.JTextField responseTimeoutTextField;
 	private javax.swing.JTextField serverAddressTextField;
 	private javax.swing.JTextField serverPortTextField;
@@ -542,12 +542,12 @@ public class WebSocketSamplerPanel extends javax.swing.JPanel {
 		return connectPatternTextField.getText();
 	}
 
-	public void setSubscribePattern(String subscribePattern) {
-		subscribePatternTextField.setText(subscribePattern);
+	public void setResponsePattern(String responsePattern) {
+		responsePatternTextField.setText(responsePattern);
 	}
 
-	public String getSubscribePattern() {
-		return subscribePatternTextField.getText();
+	public String getResponsePattern() {
+		return responsePatternTextField.getText();
 	}
 
 	public void setResponseTimeout(String responseTimeout) {
@@ -590,12 +590,12 @@ public class WebSocketSamplerPanel extends javax.swing.JPanel {
 		return connectPayloadEditorPane.getText();
 	}
 
-	public void setSubscribePayload(String subscribePayload) {
-		subscribePayloadEditorPane.setText(subscribePayload);
+	public void setSendPayload(String sendPayload) {
+		sendPayloadEditorPane.setText(sendPayload);
 	}
 
-	public String getSubscribePayload() {
-		return subscribePayloadEditorPane.getText();
+	public String getSendPayload() {
+		return sendPayloadEditorPane.getText();
 	}
 
 	public void setStreamingConnection(Boolean streamingConnection) {
